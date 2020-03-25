@@ -7,6 +7,8 @@ You can challenge your friends and see who do the best score!
 >>Javascript
 >>>CSS
 
+You can see how I coded it [Here](https://youtu.be/ZYYeFZvZqWk)
+
 Html and CSS is used just for the structure of the site, the main element is the Javascript Canvas, we can divide the __main.js__ into two big functions:
 - setup( )
 - update( )
