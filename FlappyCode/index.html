@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_PUNTO&VIRGOLA</title>
+	<style>
+		button{
+			font-size:30px;
+			color:white;
+			background-color: darkcyan;
+			border:none;
+			padding:9px;
+			margin:20px;
+			border-radius: 10px;
+		}
+		button:hover{
+			color:lightgreen;
+		}
+
+		#over{
+			background-color:rgb(167, 50, 50);
+			color:white;
+			visibility:hidden;
+			font-size:40px;
+			font-family: "Arial";
+			width:288px;
+			text-align: center;
+			border-radius:5px;
+		}
+
+		body{
+			background-color: darkslategray;
+		}
+	</style>
+</head>
+	<body onload="setup();">
+		<center>
+			<canvas id="canvas" width="288" height="384">
+			</canvas>
+			<br>
+			<button onclick="rigioca()"><b>Gioca</b></button>
+			<div id="over">
+				<b>GAME OVER</b>
+			</div>
+		</center>
+
+		<script type="text/javascript" src="main.js">
+		</script>
+
+	</body>
+</html>
