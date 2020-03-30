@@ -1,4 +1,4 @@
-# flappy
+# Flappy <img src="FlappyCode/bird.png" alt="bird_icon" width="60" height="60">
 ### -Game Concept- 
 Browser __Minigame__ developed in __Javascript__, it's very similar to 'FlappyBird', the unique rule is to don't touch the tubes.
 You can challenge your friends and see who do the best score!
