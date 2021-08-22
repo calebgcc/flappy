@@ -32,7 +32,7 @@ class Player{
 	}
 
 	show(){
-		ctx.drawImage(avatar,this.x,this.y,50,50);
+		ctx.drawImage(avatar,this.x,this.y,40,30);
 	}
 
 	fly(){
@@ -74,13 +74,12 @@ function update(){
 		ctx.drawImage(tuboDown,tubi[i].x,tubi[i].y+360,60,300);
 		tubi[i].x--;
 
-		if(tubi[i].x==100){
+		if(tubi[i].x==50){
 			tubi.push({x:288,y:Math.floor(Math.random()*200)-200})
 		}
 
 		//fase di game over
-
-		if(bird.x==tubi[i].x-40 && (bird.y>=tubi[i].y && bird.y<=tubi[i].y+280)){
+		if(bird.x==tubi[i].x-30 && (bird.y>=tubi[i].y && bird.y<=tubi[i].y+280)){
 			gameOver();
 			clearInterval(end);
 			console.log("game over");
