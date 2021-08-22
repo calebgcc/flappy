@@ -71,43 +71,35 @@ function update(){
 
 	for(var i=0;i<tubi.length;i++){
 		ctx.drawImage(tuboUp,tubi[i].x,tubi[i].y,60,300);
-		ctx.drawImage(tuboDown,tubi[i].x,tubi[i].y+360,60,300);
+		ctx.drawImage(tuboDown,tubi[i].x,tubi[i].y+385,60,300);
 		tubi[i].x--;
+
+		if(tubi[i].x+60==0){
+			tubi.splice(i,1);
+			i--;
+			continue;
+		}
 
 		if(tubi[i].x==50){
 			tubi.push({x:288,y:Math.floor(Math.random()*200)-200})
 		}
 
 		//fase di game over
-		if(bird.x==tubi[i].x-30 && (bird.y>=tubi[i].y && bird.y<=tubi[i].y+280)){
+
+		if(bird.x==tubi[i].x-30 && (bird.y<tubi[i].y+295 || bird.y > tubi[i].y+365)){
 			gameOver();
 			clearInterval(end);
-			console.log("game over");
+			console.log("frontale");
 		}
-
-		if(bird.x==tubi[i].x+10 && (bird.y>=tubi[i].y && bird.y<=tubi[i].y+280)){
+		if(bird.x>tubi[i].x && bird.x<tubi[i].x+60 && (bird.y<tubi[i].y+295 || bird.y>tubi[i].y+365)){
 			gameOver();
 			clearInterval(end);
-			console.log("game over");
+			console.log("interno");
 		}
-
-		if((bird.y>=tubi[i].y && bird.y<=tubi[i].y+285)&&(bird.x>=tubi[i].x && bird.x<=tubi[i].x+60)){
+		if(bird.y>384 || bird.y<0){
 			gameOver();
 			clearInterval(end);
-			console.log("game over")
-		}
-
-
-		if(bird.x==tubi[i].x-40 && bird.y>=tubi[i].y+330){
-			gameOver();
-			clearInterval(end);
-			console.log("game over");
-		}
-
-		if(bird.x==tubi[i].x+10 && bird.y>=tubi[i].y+330){
-			gameOver();
-			clearInterval(end);
-			console.log("game over");
+			console.log("fuori dal terreno di gioco");
 		}
 
 		if(bird.x==tubi[i].x+60)
@@ -136,7 +128,6 @@ function setup(){
 
 	document.body.addEventListener("keypress",fly =>{
 		bird.fly();
-		console.log("vola vola volaa");
 	});
 
 	end = setInterval("update()",10);
