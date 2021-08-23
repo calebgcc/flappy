@@ -50,6 +50,7 @@ class Player{
 // TUBI
 
 var tubi = [];
+var SPEED_TUBE = 50;
 
 tubi[0] ={
 	x:288,
@@ -80,7 +81,7 @@ function update(){
 			continue;
 		}
 
-		if(tubi[i].x==50){
+		if(tubi[i].x==SPEED_TUBE){
 			tubi.push({x:288,y:Math.floor(Math.random()*200)-200})
 		}
 
@@ -102,8 +103,12 @@ function update(){
 			console.log("fuori dal terreno di gioco");
 		}
 
-		if(bird.x==tubi[i].x+60)
+		if(bird.x==tubi[i].x+60){
 			point++;
+			SPEED_TUBE = Math.floor(point/10)*10 +50;
+			console.log(SPEED_TUBE);
+		}
+			 
 
 		ctx.font = "30px Arial";
 		ctx.fillStyle="white";
